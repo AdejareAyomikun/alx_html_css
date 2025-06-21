@@ -40,6 +40,16 @@ nav {
 .ri-menu-2-line{
     display: none;
 }
+.hamburger{
+  cursor: pointer;
+}
+/* .open-icon {
+  display: inline-block;
+} */
+
+.close-icon {
+  display: none;
+}
 .hero {
   background-image: url("images/headphones_hero_1.jpg");
   background-position: 35% center;
@@ -230,7 +240,43 @@ input, textarea {
     }
 
 }
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
 
+  .nav-links {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.95); */
+    flex-direction: column;
+    text-align: center;
+    /* padding: 1rem; */
+  }
+
+  #menu-toggle:checked ~ .hamburger + .logo + .nav-links {
+    display: flex;
+  }
+  #menu-toggle:checked ~ .hamburger .open-icon {
+  display: none;
+}
+
+#menu-toggle:checked ~ .hamburger .close-icon {
+  display: inline-block;
+}
+
+  .nav-links li {
+    /* padding: 1rem 0; */
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
 @media (max-width: 720px) {
         .hero p{
         padding: 0 15px;
